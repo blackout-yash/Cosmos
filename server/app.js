@@ -20,7 +20,10 @@ import { errorMiddleware } from "./middlewares/error.js";
 const app = express();
 
 app.use(express.json());
-app.use(cookies());
+app.use(cookies({
+    domain: 'cosmos-server.onrender.com',
+    path: "/"
+}));
 
 app.use(function (req, res, next) {
     if (req.headers.origin) res.setHeader('Access-Control-Allow-Origin', req.headers.origin);
