@@ -24,7 +24,7 @@ export const login = asyncMidddlewareError(
         res.cookie("jwtoken", token, {
             expires: new Date(Date.now() + 128986400),
             httpOnly: false,
-            domain: "http://localhost:3000"
+            domain: "http://localhost"
         });
 
         res.status(200).json({
