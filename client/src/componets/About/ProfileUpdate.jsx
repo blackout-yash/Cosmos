@@ -4,6 +4,7 @@ import profile from "../../assets/password.png";
 import { useEffect, useState } from "react";
 import Loader from "../Extra/Loader";
 import Loading from "../Extra/Loading";
+import { url } from "../../url";
 
 const ProfileUpdate = () => {
     const navigate = useNavigate();
@@ -15,7 +16,8 @@ const ProfileUpdate = () => {
 
     const callAboutPage = async () => {
         try {
-            const res = await fetch("https://cosmos-server.onrender.com/api/getdata", {
+            // const res = await fetch("https://cosmos-server.onrender.com/api/getdata", {
+            const res = await fetch(`${url}/api/getdata`, {
                 method: "GET",
                 headers: {
                     Accept: "application/json",
@@ -57,8 +59,8 @@ const ProfileUpdate = () => {
         try {
             setLoad(true);
             const { name, work, phone } = userData;
-
-            const res = await fetch("https://cosmos-server.onrender.com/api/updateprofile", {
+            // const res = await fetch("https://cosmos-server.onrender.com/api/updateprofile", {
+            const res = await fetch(`${url}/api/updateprofile`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"

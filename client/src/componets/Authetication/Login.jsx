@@ -4,6 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useContext, useState } from "react";
 import { UserContext } from "../../App";
 import Loading from "../Extra/Loading";
+import { url } from "../../url";
 
 const Login = () => {
     // eslint-disable-next-line
@@ -18,7 +19,7 @@ const Login = () => {
 
         try {
             setShow(true);
-            const res = await fetch("https://cosmos-server.onrender.com/api/login", {
+            const res = await fetch(`${url}/api/login`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"

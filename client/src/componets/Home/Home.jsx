@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import "../../styles/home.css";
 import Loader from "../Extra/Loader";
+import { url } from "../../url";
 
 const Home = () => {
     const [userName, setUserName] = useState();
@@ -10,7 +11,7 @@ const Home = () => {
 
     const userHome = async () => {
         try {
-            const res = await fetch("https://cosmos-server.onrender.com/api/getdata", {
+            const res = await fetch(`${url}/api/getdata`, {
                 method: "GET",
                 headers: {
                     "Content-Type": "application/json"

@@ -6,6 +6,7 @@ import { FaRegAddressBook } from "react-icons/fa";
 import { MdOutlinePeopleAlt } from "react-icons/md";
 import { BiMobileAlt } from "react-icons/bi";
 import Loading from "../Extra/Loading";
+import { url } from "../../url";
 
 const Contact = () => {
     const navigate = useNavigate();
@@ -17,7 +18,7 @@ const Contact = () => {
 
     const userContact = async () => {
         try {
-            const res = await fetch("https://cosmos-server.onrender.com/api/getdata", {
+            const res = await fetch(`${url}/api/getdata`, {
                 method: "GET",
                 headers: {
                     "Content-Type": "application/json"
@@ -59,7 +60,7 @@ const Contact = () => {
             setLoad(true);
             const { name, email, phone, message } = userData;
 
-            const res = await fetch("https://cosmos-server.onrender.com/api/contact", {
+            const res = await fetch(`${url}/api/contact`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"

@@ -2,6 +2,7 @@ import React, { useEffect, useContext } from "react";
 import { useNavigate } from 'react-router-dom';
 import { UserContext } from "../../App";
 import Loader from "../Extra/Loader";
+import { url } from "../../url";
 
 const Logout = () => {
     // eslint-disable-next-line
@@ -10,7 +11,7 @@ const Logout = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        fetch("https://cosmos-server.onrender.com/api/logout", {
+        fetch(`${url}/api/logout`, {
             method: "GET",
             headers: {
                 Accept: "application/json",

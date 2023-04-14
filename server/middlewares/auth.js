@@ -6,6 +6,7 @@ import errorHandler from "../utils/errorHandler.js";
 export const authentication = asyncMidddlewareError(
     async (req, res, next) => {
         const token = req.cookies.jwtoken;
+        console.log(token);
         if (!token) {
             return next(new errorHandler("Please Login to Continue", 498));
         }

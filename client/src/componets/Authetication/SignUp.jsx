@@ -3,6 +3,7 @@ import signup from "../../assets/signup.png";
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import Loading from "../Extra/Loading";
+import { url } from "../../url";
 
 const SignUp = () => {
     const navigate = useNavigate();
@@ -24,7 +25,7 @@ const SignUp = () => {
             setShow(true);
             const { name, email, phone, work, password, cnf_password } = user;
 
-            const res = await fetch("https://cosmos-server.onrender.com/api/signup", {
+            const res = await fetch(`${url}/api/signup`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"

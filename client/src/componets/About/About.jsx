@@ -26,8 +26,8 @@ const About = () => {
 
     const callAboutPage = async () => {
         try {
-
-            const res = await fetch("https://cosmos-server.onrender.com/api/about", {
+            // const res = await fetch("https://cosmos-server.onrender.com/api/about", {
+            const res = await fetch(`${url}/api/about`, {
                 method: "GET",
                 headers: {
                     Accept: "application/json",
@@ -58,7 +58,8 @@ const About = () => {
             const data = new FormData();
             data.append("image", file);
 
-            const res = await fetch("https://cosmos-server.onrender.com/api/uploading", {
+            // const res = await fetch("https://cosmos-server.onrender.com/api/uploading", {
+            const res = await fetch(`${url}/api/uploading`, {
                 method: "POST",
                 credentials: 'include',
                 body: data
@@ -85,7 +86,8 @@ const About = () => {
 
     const userImg = async () => {
         try {
-            const res = await fetch("https://cosmos-server.onrender.com/api/getimage", {
+            // const res = await fetch("https://cosmos-server.onrender.com/api/getimage", {+
+            const res = await fetch(`${url}/api/getimage`, {
                 method: "GET",
                 credentials: 'include'
             });
@@ -117,7 +119,8 @@ const About = () => {
     const deleteUser = async () => {
         try {
             setLoad(true);
-            const res = await fetch("https://cosmos-server.onrender.com/api/deleteuser", {
+            // const res = await fetch("https://cosmos-server.onrender.com/api/deleteuser", {
+            const res = await fetch(`${url}/api/deleteuser`, {
                 method: "DELETE",
                 credentials: 'include'
             });

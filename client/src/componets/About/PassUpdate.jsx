@@ -4,8 +4,7 @@ import img from "../../assets/signup.png";
 import { Link, useNavigate } from "react-router-dom";
 import Loader from "../Extra/Loader";
 import Loading from "../Extra/Loading";
-
-
+import { url } from "../../url";
 
 
 const PassUpdate = () => {
@@ -18,7 +17,8 @@ const PassUpdate = () => {
 
     const passEmail = async () => {
         try {
-            const res = await fetch("https://cosmos-server.onrender.com/api/getdata", {
+            // const res = await fetch("https://cosmos-server.onrender.com/api/getdata", {
+            const res = await fetch(`${url}/api/getdata`, {
                 method: "GET",
                 headers: {
                     "Content-Type": "application/json"
@@ -50,7 +50,8 @@ const PassUpdate = () => {
 
         try {
             setLoad(true);
-            const res = await fetch("https://cosmos-server.onrender.com/api/passUpdate", {
+            // const res = await fetch("https://cosmos-server.onrender.com/api/passUpdate", {
+            const res = await fetch(`${url}/api/passUpdate`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
