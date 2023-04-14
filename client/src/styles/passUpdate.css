@@ -1,0 +1,115 @@
+.update {
+    height: 100vh;
+    background-color: #ffffff;
+    background-image: linear-gradient(315deg, #ffffff 0%, #5899e2 74%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.update-container {
+    height: 80%;
+    width: 80%;
+    background-color: #6ea7e7;
+    display: flex;
+    border-radius: 2rem;
+}
+
+.update-box {
+    background-color: #4e7cd1;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.update-box h1 {
+    color: #0B2447;
+    padding-bottom: 2rem;
+}
+
+.update-form {
+    width: 70%;
+}
+
+.update-input-container {
+    margin-bottom: 1rem;
+}
+
+.update-input-container input {
+    width: 100%;
+    padding: 1rem;
+    border-bottom: 2px solid #0B2447;
+
+    color: #081c3b;
+    background-color: #d3dbe0;
+    border-radius: 0.4rem;
+    font-weight: 500;
+    font-size: 1.05rem;
+    transition: all .05s ease-in;
+}
+
+.update-input-container input:focus {
+    border-right: 2px solid #0B2447;
+}
+
+.update-btn {
+    width: 100%;
+    padding: 0.6rem;
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: #081c3b;
+    transition: all .3s ease-in;
+    border-radius: 0.4rem;
+    cursor: pointer;
+}
+
+.update-btn:hover {
+    background-color: #5ca0f2;
+    background-image: linear-gradient(300deg, #5ca0f2 50%, #f5f7f6 100%);
+}
+
+.update-aside {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.update-aside img {
+    height: 200px;
+    width: 200px;
+}
+
+.update-aside a {
+    /* font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; */
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #081c3b;
+    border-bottom: 3px solid #fff;
+    text-transform: lowercase;
+    border-radius: 2px;
+}
+
+@media screen and (max-width: 850px) {
+    .update-container {
+        flex-direction: column;
+    }
+
+    .update-form {
+        width: 90%;
+    }
+
+    .update-box {
+        border-radius: 0.4rem;
+        width: 100%;
+        min-height: 100%;
+    }
+
+    .update-aside {
+        display: none;
+    }
+}

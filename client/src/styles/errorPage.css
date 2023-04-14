@@ -1,0 +1,27 @@
+.error {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #5ca0f2;
+    background-image: linear-gradient(315deg, #5ca0f2 0%, #f5f7f6 74%);
+    color: #081c3b;
+}
+
+.home-btn {
+    margin-top: 1rem;
+    padding: 0.6rem 1rem;
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: #081c3b;
+    transition: all .2s ease-in;
+    border-radius: 0.4rem;
+    cursor: pointer;
+    border: 2px solid #3d64ac;
+}
+
+.home-btn:hover {
+    background-color: #5ca0f2;
+    background-image: linear-gradient(315deg, #5ca0f2 0%, #f5f7f6 74%);
+}

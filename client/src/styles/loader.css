@@ -1,0 +1,14 @@
+.loader {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    background-color: #5ca0f2;
+    background-image: linear-gradient(315deg, #5ca0f2 0%, #f5f7f6 74%);
+}
+
+.loader h2 {
+    color: #081c3b;
+}
