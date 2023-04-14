@@ -23,7 +23,9 @@ export const login = asyncMidddlewareError(
         const token = await user.generateAuthToken();
         res.cookie("jwtoken", token, {
             expires: new Date(Date.now() + 128986400),
-            httpOnly: false
+            httpOnly: false,
+            domain: 'cosmos-server.onrender.com',
+            path: '/'
             // domain: "localhost",
             // sameSite: 
         });
