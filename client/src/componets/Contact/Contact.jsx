@@ -17,7 +17,7 @@ const Contact = () => {
 
     const userContact = async () => {
         try {
-            const res = await fetch("http://localhost:4000/api/getdata", {
+            const res = await fetch("https://cosmos-server.onrender.com/api/getdata", {
                 method: "GET",
                 headers: {
                     "Content-Type": "application/json"
@@ -59,7 +59,7 @@ const Contact = () => {
             setLoad(true);
             const { name, email, phone, message } = userData;
 
-            const res = await fetch("http://localhost:4000/api/contact", {
+            const res = await fetch("https://cosmos-server.onrender.com/api/contact", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"

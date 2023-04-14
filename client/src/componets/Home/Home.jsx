@@ -10,7 +10,7 @@ const Home = () => {
 
     const userHome = async () => {
         try {
-            const res = await fetch("http://localhost:4000/api/getdata", {
+            const res = await fetch("https://cosmos-server.onrender.com/api/getdata", {
                 method: "GET",
                 headers: {
                     "Content-Type": "application/json"

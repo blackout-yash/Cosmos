@@ -27,7 +27,7 @@ const About = () => {
     const callAboutPage = async () => {
         try {
 
-            const res = await fetch("http://localhost:4000/api/about", {
+            const res = await fetch("https://cosmos-server.onrender.com/api/about", {
                 method: "GET",
                 headers: {
                     Accept: "application/json",
@@ -58,7 +58,7 @@ const About = () => {
             const data = new FormData();
             data.append("image", file);
 
-            const res = await fetch("http://localhost:4000/api/uploading", {
+            const res = await fetch("https://cosmos-server.onrender.com/api/uploading", {
                 method: "POST",
                 credentials: 'include',
                 body: data
@@ -85,7 +85,7 @@ const About = () => {
 
     const userImg = async () => {
         try {
-            const res = await fetch("http://localhost:4000/api/getimage", {
+            const res = await fetch("https://cosmos-server.onrender.com/api/getimage", {
                 method: "GET",
                 credentials: 'include'
             });
@@ -117,15 +117,13 @@ const About = () => {
     const deleteUser = async () => {
         try {
             setLoad(true);
-            const res = await fetch("http://localhost:4000/api/deleteuser", {
+            const res = await fetch("https://cosmos-server.onrender.com/api/deleteuser", {
                 method: "DELETE",
                 credentials: 'include'
             });
 
             const data = await res.json();
             const status = res.status;
-            console.log(data)
-            console.log(status)
             if (!data || status !== 201) {
                 setLoad(false);
                 const error = new Error(res.error);

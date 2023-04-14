@@ -18,7 +18,7 @@ const Login = () => {
 
         try {
             setShow(true);
-            const res = await fetch("http://localhost:4000/api/login", {
+            const res = await fetch("https://cosmos-server.onrender.com/api/login", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"

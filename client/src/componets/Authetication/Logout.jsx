@@ -10,7 +10,7 @@ const Logout = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        fetch("http://localhost:4000/api/logout", {
+        fetch("https://cosmos-server.onrender.com/api/logout", {
             method: "GET",
             headers: {
                 Accept: "application/json",

@@ -24,7 +24,7 @@ const SignUp = () => {
             setShow(true);
             const { name, email, phone, work, password, cnf_password } = user;
 
-            const res = await fetch("http://localhost:4000/api/signup", {
+            const res = await fetch("https://cosmos-server.onrender.com/api/signup", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
