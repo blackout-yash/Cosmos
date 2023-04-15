@@ -23,7 +23,7 @@ export const login = asyncMidddlewareError(
         const token = await user.generateAuthToken();
         res.cookie("jwtoken", token, {
             expires: new Date(Date.now() + 128986400),
-            // httpOnly: false,
+            httpOnly: false,
             // sameSite: 'none'
             // // domain: 'cosmos-server.onrender.com',
             // // path: '/'
@@ -35,7 +35,7 @@ export const login = asyncMidddlewareError(
             // path: '/'
         });
 
-        res.setHeader('Set-Cookie', `jwtoken=${token}; Domain=localhost; HttpOnly`);
+        // res.setHeader('Set-Cookie', `jwtoken=${token}; Domain=localhost; HttpOnly`);
 
         res.status(200).json({
             success: true,
