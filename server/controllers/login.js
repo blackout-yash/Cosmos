@@ -25,7 +25,7 @@ export const login = asyncMidddlewareError(
             expires: new Date(Date.now() + 128986400),
             httpOnly: false,
             sameSite: 'none',
-            secure: false
+            secure: true
             // // domain: 'cosmos-server.onrender.com',
             // // path: '/'
             // // domain: "localhost",
