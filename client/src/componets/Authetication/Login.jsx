@@ -56,6 +56,7 @@ const Login = () => {
                         </div>
 
                         <div className="login-box">
+                            <h1>Login</h1>
                             <form method="POST" className="login-form">
                                 <div className="login-input-container">
                                     <input type="email" name="email" placeholder="abc@gmail.com"
