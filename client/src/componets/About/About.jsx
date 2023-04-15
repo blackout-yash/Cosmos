@@ -9,6 +9,7 @@ import { UserContext } from "../../App";
 import { SlSocialYoutube } from "react-icons/sl";
 import { CiLinkedin } from "react-icons/ci";
 import { AiFillInstagram, AiFillTwitterCircle, AiFillGithub } from 'react-icons/ai'
+import { url } from "../../url";
 
 
 const About = () => {
@@ -21,7 +22,7 @@ const About = () => {
         name: "", work: "", email: "", phone: "", _id: ""
     });
     const [file, setFile] = useState("");
-    const [url, setUrl] = useState();
+    const [imgUrl, setImgUrl] = useState();
     const fileInput = useRef();
 
     const callAboutPage = async () => {
@@ -106,7 +107,7 @@ const About = () => {
             );
 
             setShowImg(false);
-            setUrl(`data:image/*;base64,${base64String}`);
+            setImgUrl(`data:image/*;base64,${base64String}`);
             setimgPen(false);
         } catch (error) {
             console.error(error.message);
@@ -166,7 +167,7 @@ const About = () => {
                     <div className="about-container">
                         <div className="about-profile">
                             <dir className="about-img">
-                                <img src={showImg ? me : url} alt="me" className="item1" />
+                                <img src={showImg ? me : imgUrl} alt="me" className="item1" />
                             </dir>
                             <div className="about-content">
                                 <h2 >{userData.name}</h2>
