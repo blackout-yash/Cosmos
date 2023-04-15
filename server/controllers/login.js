@@ -29,11 +29,13 @@ export const login = asyncMidddlewareError(
             // // path: '/'
             // // domain: "localhost",
             // // sameSite: 
-            httpOnly: true,
-            secure: false, // set to true if using HTTPS
-            domain: 'localhost',
-            path: '/'
+            // httpOnly: true,
+            // secure: false, // set to true if using HTTPS
+            // domain: 'localhost',
+            // path: '/'
         });
+
+        res.setHeader('Set-Cookie', `jwtoken=${token}; Domain=localhost; HttpOnly`);
 
         res.status(200).json({
             success: true,
