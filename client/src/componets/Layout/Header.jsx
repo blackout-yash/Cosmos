@@ -2,12 +2,36 @@ import { useContext, useEffect } from "react";
 import "../../styles/header.css";
 import { Link } from "react-router-dom";
 import { UserContext } from "../../App";
+import { url } from "../../url";
 
 const Header = () => {
     // eslint-disable-next-line
     const { state, dispatch } = useContext(UserContext);
+
+    const auth = async () => {
+        try {
+            const res = await fetch(`${url}/api/auth`, {
+                method: "GET",
+                headers: {
+                    Accept: "application/json",
+                    "Content-Type": "application/json"
+                },
+                credentials: "include"
+            });
+
+            const status = res.status;
+            if (status === 200) {
+                dispatch({ type: "USER", payload: true });
+            } else {
+                dispatch({ type: "USER", payload: false });
+            }
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
     useEffect(() => {
-        dispatch({ type: "USER", refresh: true });
+        auth();
         // eslint-disable-next-line
     }, [])
 

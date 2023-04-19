@@ -13,6 +13,7 @@ import passUpdate from "./routes/passUpdate.js";
 import uploadImg from "./routes/uploadImg.js";
 import getImg from "./routes/getImg.js";
 import deleteUser from "./routes/deleteUser.js";
+import isAuth from "./routes/isAuth.js";
 
 import { connectDB } from "./config/database.js";
 import { errorMiddleware } from "./middlewares/error.js";
@@ -20,10 +21,7 @@ import { errorMiddleware } from "./middlewares/error.js";
 const app = express();
 
 app.use(express.json());
-app.use(cookies({
-    // domain: 'cosmos-server.onrender.com',
-    // path: "/"
-}));
+app.use(cookies());
 
 app.use(function (req, res, next) {
     if (req.headers.origin) res.setHeader('Access-Control-Allow-Origin', req.headers.origin);
@@ -51,6 +49,7 @@ app.use('/api', passUpdate);
 app.use('/api', uploadImg);
 app.use('/api', getImg);
 app.use('/api', deleteUser);
+app.use('/api', isAuth);
 
 app.get('/', (req, res) => {
     res.send("Hello");
