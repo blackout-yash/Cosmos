@@ -19,33 +19,33 @@ import "./styles/app.css";
 export const UserContext = createContext();
 
 const Routing = () => {
-  return (
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/signup" element={<SignUp />} />
-      <Route path="/login" element={<Login />} />
-      <Route path="/contact" element={<Contact />} />
-      <Route path="/about" element={<About />} />
-      <Route path="/logout" element={<Logout />} />
-      <Route path="/profileupdate" element={<ProfileUpdate />} />
-      <Route path="/credentialupdate" element={<PassUpdate />} />
-      <Route path="*" element={<ErrorPage />} />
-    </Routes>
-  )
+	return (
+		<Routes>
+			<Route path="/" element={<Home />} />
+			<Route path="/signup" element={<SignUp />} />
+			<Route path="/login" element={<Login />} />
+			<Route path="/contact" element={<Contact />} />
+			<Route path="/about" element={<About />} />
+			<Route path="/logout" element={<Logout />} />
+			<Route path="/profileupdate" element={<ProfileUpdate />} />
+			<Route path="/credentialupdate" element={<PassUpdate />} />
+			<Route path="*" element={<ErrorPage />} />
+		</Routes>
+	)
 };
 
 function App() {
-  const [state, dispatch] = useReducer(reducer, intialState);
+	const [state, dispatch] = useReducer(reducer, intialState);
 
-  return (
-    <Router>
-      <UserContext.Provider value={{ state, dispatch }}>
-        <Header />
-        <Routing />
-        <Footer />
-      </UserContext.Provider>
-    </Router>
-  )
+	return (
+		<Router>
+			<UserContext.Provider value={{ state, dispatch }}>
+				<Header />
+				<Routing />
+				<Footer />
+			</UserContext.Provider>
+		</Router>
+	)
 };
 
 export default App;

@@ -104,7 +104,7 @@ const PassUpdate = () => {
                         </div>
 
                         <div className="update-box">
-                            <h1>Login</h1>
+                            <h1>Update Credentials</h1>
                             <form method="POST" className="update-form">
                                 <div className="update-input-container">
                                     <input type="email" name="email" readOnly

@@ -4,6 +4,6 @@ import { logout } from "../controllers/logout.js";
 
 const route = express.Router();
 
-route.get('/logout', authentication, logout);
+route.delete('/logout', authentication, logout);
 
 export default route;
